@@ -2,8 +2,16 @@ version: '3'
 
 services:
   www:
+    hostname: www
     build: './front/www'
     volumes:
       - './front/www/html:/usr/share/nginx/html'
     ports:
       - '80:80'
+    depends_on:
+      - 'panel'
+  panel:
+    hostname: panel
+    build: './front/panel'
+    volumes:
+      - './front/panel/html:/usr/share/nginx/html/panel'
