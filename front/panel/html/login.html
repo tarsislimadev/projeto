@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projeto</title>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <script src="./js/nelement.js"></script>
+  <script>
+    const body = nElement.element(document.body)
+    body.setStyle('background-color', '#eeeeee')
+    body.setStyle('font-family', 'system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue')
+
+    const app = nElement.id('app')
+    
+    const box = nElement.id('app')
+    box.setStyle('background-color', '#ffffff')
+    box.setStyle('margin', '5rem auto')
+    box.setStyle('width', '20rem')
+
+    const title = new nH2()
+    title.setText('project')
+    title.setStyle('text-align', 'center')
+    title.setStyle('background-color', '#000000')
+    title.setStyle('color', '#ffffff')
+    title.setStyle('padding', '1rem')
+    box.append(title)
+
+    const subtitle = new nH3()
+    subtitle.setText('login')
+    subtitle.setStyle('text-align', 'center')
+    subtitle.setStyle('padding', '1rem')
+    box.append(subtitle)
+
+    const form = new nElement()
+    form.setStyle('padding', '1rem')
+
+    const emailInput = new nInputComponent()
+    emailInput.label.setText('e-mail')
+    emailInput.input.placeholder('e-mail')
+    form.append(emailInput)
+
+    const passwordInput = new nInputComponent()
+    passwordInput.label.setText('password')
+    passwordInput.input.placeholder('password')
+    form.append(passwordInput)
+
+    const loginButton = new nButton()
+    loginButton.setText('login')
+    loginButton.on('click', () => {
+      // TODO
+    })
+    form.append(loginButton)
+
+    box.append(form)
+
+  </script>
+
+</body>
+
+</html>
