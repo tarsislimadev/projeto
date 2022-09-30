@@ -16,7 +16,10 @@
   <script>
     const app = nElement.id('app')
 
-    app.setText('panel')
+    const login = new nLink()
+    login.href('./login.html')
+    login.setText('login')
+    app.append(login)
   </script>
 
 </body>
