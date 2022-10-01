@@ -12,7 +12,8 @@ class nElement {
     this.setElementName(elementName, { component: { name: componentName } })
     this.setContainerName(containerName, { component: { name: componentName } })
 
-    this.setStyle('margin', '0')
+    this.setStyleInContainer('margin', '0 0 .5rem 0')
+
     this.setStyle('padding', '0')
     this.setStyle('border', 'none')
     this.setStyle('outline', 'none')
@@ -76,9 +77,8 @@ class nElement {
   }
 
   render() {
-    const { container, element } = this
-    container.append(element)
-    return container
+    this.container.append(this.element)
+    return this.container
   }
 
 }
@@ -89,6 +89,9 @@ class nLink extends nElement {
       element: { name: 'a' },
       component: { name: 'link' }
     })
+
+    this.setStyleInContainer('text-align', 'center')
+    this.setStyle('text-decoration', 'none')
 
     this.href('#')
   }
@@ -122,8 +125,6 @@ class nText extends nElement {
       element: { name: 'span' },
       component: { name: 'text' }
     })
-
-    this.setStyleInContainer('margin', '0 0 .5rem 0')
   }
 }
 
@@ -133,8 +134,6 @@ class nInput extends nElement {
       element: { name: 'input' },
       component: { name: 'input' }
     })
-
-    this.setStyleInContainer('margin', '0 0 .5rem 0')
 
     this.setStyle('width', '100%')
     this.setStyle('font', 'inherit')
@@ -150,6 +149,10 @@ class nInput extends nElement {
     this.element.type = name
     return this
   }
+
+  getValue(def = null) {
+    return this.element.value || def
+  }
 }
 
 class nError extends nElement {
@@ -158,8 +161,6 @@ class nError extends nElement {
       element: { name: 'span' },
       component: { name: 'error' }
     })
-
-    this.setStyleInContainer('margin', '0 0 .5rem 0')
 
     this.setStyle('color', 'red')
   }
@@ -175,16 +176,9 @@ class nInputComponent extends nElement {
       component: { name: 'input-component' },
     }))
 
-    this.label.setStyle('margin', '0 0 .5rem 0')
     this.append(this.label)
-
-    this.input.setStyle('margin', '0 0 .5rem 0')
     this.append(this.input)
-
-    this.error.setStyle('margin', '0 0 .5rem 0')
     this.append(this.error)
-
-    this.setStyle('margin', '0 0 .5rem 0')
   }
 }
 
