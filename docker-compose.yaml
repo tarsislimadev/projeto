@@ -3,44 +3,13 @@ version: '3'
 services:
 
   www:
-    hostname: www
-    build: './front/www'
+    build: './src/www'
     volumes:
-      - './front/www/html:/usr/share/nginx/html'
+      - './src/www/html:/usr/share/nginx/html'
     ports:
-      - '80:80'
-    depends_on:
-      - 'panel'
+      - '8080:80'
 
   panel:
-    hostname: panel
-    build: './front/panel'
+    build: './src/panel'
     volumes:
-      - './front/panel/html:/usr/share/nginx/html/panel'
-
-  api_upload:
-    hostname: api_upload
-    build: './back/upload'
-    restart: always
-    volumes:
-      - './back/upload:/go/src'
-      - './back/commons:/project/commons'
-      - './data:/project/data'
-
-  api_users_login:
-    hostname: api_users_login
-    build: './back/users-login'
-    restart: always
-    volumes:
-      - './back/users-login:/project/app'
-      - './back/commons:/project/commons'
-      - './data:/project/data'
-
-  api_users_register:
-    hostname: api_users_register
-    build: './back/users-register'
-    restart: always
-    volumes:
-      - './back/users-register:/project/app'
-      - './back/commons:/project/commons'
-      - './data:/project/data'
+      - './src/panel/html:/usr/share/nginx/html/panel'
