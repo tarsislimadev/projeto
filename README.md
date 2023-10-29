@@ -2,16 +2,16 @@
 
 ## Modulos - Panel
 
-[-] Entrada (registro e login)
+- [-] Entrada (registro e login)
 
-[ ] Dashboard
+- [ ] Dashboard
 
-[ ] Cadastro de pessoas físicas (CRUD++)
+- [ ] Cadastro de pessoas físicas (CRUD++)
 
-[ ] Cadastro de pessoas jurídicas (CRUD++)
+- [ ] Cadastro de pessoas jurídicas (CRUD++)
 
-[ ] Cadastro de produtos (CRUD++)
+- [ ] Cadastro de produtos (CRUD++)
 
-## License
+## license
 
 [MIT](./LICENSE)
