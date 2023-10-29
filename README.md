@@ -1,8 +1,8 @@
 # Projeto
 
-## Modulos - Panel
+## Panel (modulos)
 
-- [-] Entrada (registro e login)
+- [x] Entrada (registro e login)
 
 - [ ] Dashboard
 
